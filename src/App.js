@@ -1,13 +1,16 @@
-import Basic from "./components/test";
+import Basic from "./components/dashBoard";
+import Header from "./components/header";
 
 
 
 function App() {
   return (
-    <div>
-      salut :)
-      <Basic />
-    </div>
+    <>
+      <Header />
+      <div>
+        <Basic />
+      </div>
+    </>
   );
 }
 
