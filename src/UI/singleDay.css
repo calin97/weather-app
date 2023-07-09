@@ -1,0 +1,158 @@
+.dayContainer {
+  background-image: linear-gradient(to right, #0a6ebd, #a1c2f1);
+  border-radius: 15px;
+  background: blur(10px);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.dayContainer:hover {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  background: transparent;
+  transition: 0.5s;
+}
+
+.dayEsentialInfoWrapper {
+  padding: 25px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.detailsBtnContainer {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.detailBtn {
+  height: 40px;
+  width: 100px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-txt {
+  z-index: 1;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #e7cea6;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.detailBtn:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: #fff;
+  border: none;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
+/* detailModal */
+
+.detailsModalBG {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.detailsModalContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.detailsModalContent {
+  width: 500px;
+  height: 400px;
+  background: white;
+  color: white;
+  z-index: 10;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+
+.modalHeader {
+  height: 50px;
+  background: white;
+  overflow: hidden;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modalHeader > h5 {
+  margin: 0;
+  padding: 10px;
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+}
+.detaisDayContainer {
+  padding: 10px;
+  font-size: 14px;
+  color: #2c3e50;
+  /* text-align: center; */
+}
+
+/* DETAILS MODAL BTN ACTIONS */
+
+.detailsModalActions {
+  position: absolute;
+  bottom: 2px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.actionsBtnContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.detailsModalBtn {
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 11px 28px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  background: #e7cea6;
+  transition: all 0.25s ease;
+}
+
+.detailsModalBtn:hover {
+  box-shadow: 0 10px 20px -10px rgba(39, 82, 255, 0.833);
+  transform: translateY(-5px);
+  background: #a1c2f1;
+}
