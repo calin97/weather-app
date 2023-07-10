@@ -20,7 +20,13 @@ function FavoriteBookMarkDay({ key, goodDate, dayName, monthName, text, inconUrl
         }
         syncBookMarks()
         toast.success(`You successfully deleted ${dayName}!`)
+    }
 
+    const verificationBarbequeForColor = (chanceToGratar) => {
+        if (chanceToGratar <= 50) {
+            console.log('dadadada');
+            return false
+        } else return true
     }
 
 
@@ -33,7 +39,8 @@ function FavoriteBookMarkDay({ key, goodDate, dayName, monthName, text, inconUrl
                         <p>{dayName} {monthName} {goodDate}</p>
                     </div>
                     <div className="favDayElements">
-                        <p>Chance to barbecue: {chanceToGratar}%</p>
+                        <p>Chance to barbecue:</p>
+                        <p>{chanceToGratar}%</p>
                     </div>
                     <button className='delBtn' type="button" onClick={deleteFavoriteDayHandler}>x</button>
                 </div>

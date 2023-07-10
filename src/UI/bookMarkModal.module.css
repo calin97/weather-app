@@ -25,11 +25,12 @@
   z-index: 10;
   border-radius: 16px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+  background-image: url("https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg");
 }
 
 .modalHeader {
   height: 50px;
-  background: white;
+  /* background: white; */
   overflow: hidden;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
@@ -49,10 +50,8 @@
   font-size: 14px;
   color: #2c3e50;
   text-align: center;
-}
-
-.favDayContent {
-  gap: 20px;
+  height: 280px;
+  overflow: auto;
 }
 
 .modalActions {

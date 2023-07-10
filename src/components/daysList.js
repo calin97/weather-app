@@ -34,18 +34,21 @@ function DaysList({ searchText }) {
     // 
 
 
-    const mediaAritmetica = (a, b) => (a + b) / 2 // sau Math.avg() din partea mea
+    // const mediaAritmetica = (a, b) => (a + b) / 2 // sau Math.avg() din partea mea
 
-    const computeChanceToGratar = (chanceToRain, chanceToSnow) => {
+    const computeChanceToGratar = (chanceToRain) => {
         const chanceToGratarDinParteaPloii = 100 - chanceToRain
-        const chanceToGratarDinParteaNinsorii = 100 - chanceToSnow
-        // probabilitatiile nu se calculeaza asa dar for our purpouses e ok
-        return mediaAritmetica(chanceToGratarDinParteaPloii, chanceToGratarDinParteaNinsorii)
+        // const chanceToGratarDinParteaNinsorii = 100 - chanceToSnow
+        return chanceToGratarDinParteaPloii
     }
+
+
+
+
 
     const daysForecast = data?.forecast.forecastday.map((dayData) => ({
         date: new Date(dayData.date),
-        chanceToGratar: computeChanceToGratar(dayData.day.daily_chance_of_rain, dayData.day.daily_chance_of_snow),
+        chanceToGratar: computeChanceToGratar(dayData.day.daily_chance_of_rain),
         iconUrl: dayData.day.condition.icon,
         text: dayData.day.condition.text,
         minTemp: dayData.day.mintemp_c,
