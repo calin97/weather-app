@@ -1,6 +1,7 @@
 .dashBoardContainer {
   width: 1400px;
   margin: auto;
+  padding-bottom: 40px;
 }
 
 .searchBoxContainer {

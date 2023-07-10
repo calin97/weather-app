@@ -2,6 +2,8 @@ import { useState, useEffect, useMemo } from "react";
 import SingleDay from "./singleDay";
 import '../UI/daysList.css'
 import LoadingSvg from "./loadingSvg";
+import { toast } from 'react-hot-toast';
+
 
 
 function DaysList({ searchText }) {
@@ -20,7 +22,7 @@ function DaysList({ searchText }) {
                     setIsLoading(false)
                 }
             } catch (error) {
-                console.log(error);
+                toast.error('Error fetching data:');
             }
         };
 

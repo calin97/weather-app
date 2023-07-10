@@ -6,7 +6,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: absolute;
+  position: fixed;
 }
 
 .centered {
@@ -17,8 +17,9 @@
 }
 
 .modal {
-  width: 250px;
-  height: 170px;
+  /* display: flex; */
+  width: 600px;
+  height: 400px;
   background: white;
   color: white;
   z-index: 10;
@@ -48,6 +49,10 @@
   font-size: 14px;
   color: #2c3e50;
   text-align: center;
+}
+
+.favDayContent {
+  gap: 20px;
 }
 
 .modalActions {
@@ -97,14 +102,14 @@
   font-size: 0.8rem;
   border: none;
   color: #fff;
-  background: #ff3e4e;
+  background: #a1c2f1;
   transition: all 0.25s ease;
 }
 
 .deleteBtn:hover {
-  box-shadow: 0 10px 20px -10px rgba(255, 62, 78, 0.6);
+  box-shadow: 0 10px 20px -10px rgba(231 206 166);
   transform: translateY(-5px);
-  background: #ff3e4e;
+  background: #a1c2f1;
 }
 
 .cancelBtn {

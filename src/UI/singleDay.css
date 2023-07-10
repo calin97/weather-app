@@ -4,6 +4,9 @@
   background: blur(10px);
   cursor: pointer;
   transition: 0.5s;
+
+  display: grid;
+  grid-template-rows: auto 70px;
 }
 
 .dayContainer:hover {
@@ -13,11 +16,49 @@
   transition: 0.5s;
 }
 
+.dayContainer:hover > .dayEsentialInfoWrapper > .dayDescription {
+  color: #5a96e3;
+}
+
 .dayEsentialInfoWrapper {
   padding: 25px;
 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  display: grid;
+
+  grid-template-rows: auto 75px auto auto auto auto;
+}
+
+.dayEsentialInfoWrapper > p {
+  text-align: center;
+}
+
+.dayEsentialInfoWrapper > img {
+  margin: auto;
+}
+
+.dayEsentialInfoWrapper > p.dayDescription {
+  margin: auto;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.dayEsentialInfoHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.dayEsentialInfoHeader > p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 600;
+  margin: auto auto 5px auto;
+}
+
+.dayEsentialInfoHeader > p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 600;
+  margin: auto;
 }
 
 .detailsBtnContainer {
@@ -80,7 +121,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: absolute;
+  position: fixed;
 }
 
 .detailsModalContainer {
@@ -98,14 +139,17 @@
   z-index: 10;
   border-radius: 16px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+  background-image: url("https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg");
 }
 
 .modalHeader {
   height: 50px;
-  background: white;
+  /* background: white; */
   overflow: hidden;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
 }
 
 .modalHeader > h5 {
@@ -121,6 +165,34 @@
   font-size: 14px;
   color: #2c3e50;
   /* text-align: center; */
+}
+
+.detailsDay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.imgContainer {
+  margin: auto;
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.leftDisplay {
+  display: flex;
+  flex-direction: column;
+}
+
+.rightDisplay {
+  display: flex;
+  flex-direction: column;
 }
 
 /* DETAILS MODAL BTN ACTIONS */

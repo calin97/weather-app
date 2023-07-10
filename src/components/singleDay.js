@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../UI/singleDay.css'
-import classes from '../UI/bookMarkModal.module.css'
+import { toast } from 'react-hot-toast';
+
 
 
 function SingleDay({ date, chanceToGratar, iconUrl, text, minTemp, maxTemp, humidity, avgTemp, maxWind, precip }) {
@@ -20,14 +21,28 @@ function SingleDay({ date, chanceToGratar, iconUrl, text, minTemp, maxTemp, humi
         setIsOpen(true)
     }
 
+    const goodDate = date.getDate()
 
+    const saveToBookMarksHandler = () => {
+
+        localStorage.setItem(`${goodDate}`, JSON.stringify(({ dayName, monthName, text, iconUrl, goodDate, chanceToGratar })))
+        toast.success(`You successfully added ${dayName}!`)
+        setIsOpen(false)
+
+
+
+    }
 
     return (
         <>
             <div className="dayContainer">
                 <div className='dayEsentialInfoWrapper'>
-                    <p>{dayName} {monthName} {date.getDate()}</p>
-                    <p>{text}</p>
+                    <div className='dayEsentialInfoHeader'>
+                        <p>{dayName}</p>
+                        <p>{monthName} {goodDate}</p>
+                    </div>
+
+                    <p className='dayDescription'>{text}</p>
                     <img src={iconUrl} alt={text}></img>
                     <p>Min: {Math.trunc(minTemp)}°C</p>
                     <p>Max: {Math.trunc(maxTemp)}°C</p>
@@ -51,7 +66,25 @@ function SingleDay({ date, chanceToGratar, iconUrl, text, minTemp, maxTemp, humi
                             </div>
                             <div className='detaisDayContainer'>
                                 <div className='detailsDay'>
-                                    <p>Chance to barbecue: {chanceToGratar}%</p>
+                                    <div className='imgContainer'>
+                                        <img src={iconUrl} alt={text}></img>
+                                    </div>
+                                    <div className='contentWrapper'>
+
+                                        <div className='leftDisplay'>
+                                            <p>{text}</p>
+                                            <p>Chance to barbecue: {chanceToGratar}%</p>
+                                            <p>Min: {Math.trunc(minTemp)}°C</p>
+                                            <p>Max: {Math.trunc(maxTemp)}°C</p>
+                                        </div>
+                                        <div className='rightDisplay'>
+
+                                            <p>Humidity: {humidity}%</p>
+                                            <p>Avg Temp: {avgTemp}°C</p>
+                                            <p>Max Wind: {maxWind}</p>
+                                            <p>Precip: {precip}</p>
+                                        </div>
+                                    </div>
 
 
                                 </div>
@@ -61,7 +94,7 @@ function SingleDay({ date, chanceToGratar, iconUrl, text, minTemp, maxTemp, humi
                             <div className='detailsModalActions'>
                                 <div className='actionsBtnContainer'>
                                     <button className='detailsModalBtn' onClick={() => setIsOpen(false)}>Close</button>
-                                    <button className='detailsModalBtn'>
+                                    <button className='detailsModalBtn' onClick={saveToBookMarksHandler}>
                                         Save Day
                                     </button>
                                 </div>
