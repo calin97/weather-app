@@ -4,7 +4,6 @@ import '../UI/header.css'
 import BookMarkSvg from '../utils/bookMarkSvg'
 
 
-
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
 

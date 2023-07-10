@@ -10,7 +10,6 @@ function DaysList({ searchText }) {
     const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(true)
 
-
     useEffect(() => {
         const fetchData = async () => {
             console.log();
@@ -31,18 +30,10 @@ function DaysList({ searchText }) {
 
     console.log(data);
 
-    // 
-
-
-    // const mediaAritmetica = (a, b) => (a + b) / 2 // sau Math.avg() din partea mea
-
     const computeChanceToGratar = (chanceToRain) => {
         const chanceToGratarDinParteaPloii = 100 - chanceToRain
-        // const chanceToGratarDinParteaNinsorii = 100 - chanceToSnow
         return chanceToGratarDinParteaPloii
     }
-
-
 
 
 
@@ -63,25 +54,7 @@ function DaysList({ searchText }) {
 
     console.log(daysForecast);
 
-
-    // const region = data?.location.map((element) => ({
-    //     country: element.country,
-    //     localTime: element.localTime,
-    //     place: element.name,
-
-    // }))
-
-
-
     const location = useMemo(() => data?.location, [data])
-
-
-
-
-
-    // const location = data?.location
-
-
 
     return isLoading ? <LoadingSvg /> : <>
         <div className="locationContainer">

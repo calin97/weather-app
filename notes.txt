@@ -1,0 +1,14 @@
+1-Worth-mentioning
+
+# To improve the transmission of props to child components, I had to deconstruct the forecast object within the daysList.js component.
+
+# I incorporated the search logic into the API URL by utilizing query parameters and the searchText state directly.
+
+# For security purposes, I stored the API key in a .env file and did not include it in the GitHub repository with git Ignore.
+
+# Once I removed the specific element {syncBookMarks} from local storage, I implemented a state update logic to show the remaining favorite days in the bookmark section. This was achieved using a callback hook, and in the useEffect hook, I included the callback function as a dependency to ensure proper execution.
+
+
+
+2-Optimization/Future implementation
+# To optimize the process, I would suggest incorporating responsiveness as a key factor.

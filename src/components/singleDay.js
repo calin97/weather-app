@@ -2,8 +2,6 @@ import { useState } from 'react'
 import '../UI/singleDay.css'
 import { toast } from 'react-hot-toast';
 
-
-
 function SingleDay({ date, chanceToGratar, iconUrl, text, minTemp, maxTemp, humidity, avgTemp, maxWind, precip }) {
 
     const [isOpen, setIsOpen] = useState(false)
@@ -28,9 +26,6 @@ function SingleDay({ date, chanceToGratar, iconUrl, text, minTemp, maxTemp, humi
         localStorage.setItem(`${goodDate}`, JSON.stringify(({ dayName, monthName, text, iconUrl, goodDate, chanceToGratar })))
         toast.success(`You successfully added ${dayName}!`)
         setIsOpen(false)
-
-
-
     }
 
     return (
@@ -85,10 +80,7 @@ function SingleDay({ date, chanceToGratar, iconUrl, text, minTemp, maxTemp, humi
                                             <p>Precip: {precip}</p>
                                         </div>
                                     </div>
-
-
                                 </div>
-
                             </div>
 
                             <div className='detailsModalActions'>

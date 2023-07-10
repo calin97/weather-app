@@ -6,12 +6,6 @@ function BookMarkModal({ setIsOpen }) {
 
     const [favBookMarks, setFavBookMarks] = useState([])
 
-    // const test = JSON.parse(localStorage.getItem('bookMarks'));
-    // console.log(test);
-
-    // function to get all data from local storage
-
-
     const syncBookMarks = useCallback(() => {
         let bookMarkArr = []
         for (let i = 0; i < localStorage.length; i++) {
@@ -21,7 +15,6 @@ function BookMarkModal({ setIsOpen }) {
 
         }
         setFavBookMarks(bookMarkArr)
-
     }, [])
 
     useEffect(() => {
@@ -29,12 +22,6 @@ function BookMarkModal({ setIsOpen }) {
     }, [syncBookMarks])
 
     console.log(favBookMarks);
-
-
-
-
-
-
 
     return <>
         <div className={classes.darkBG} onClick={() => setIsOpen(false)} />

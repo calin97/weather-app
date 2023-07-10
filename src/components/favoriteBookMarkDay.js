@@ -1,12 +1,9 @@
+import { useMemo } from 'react';
 import '../UI/favoriteBookMarkDay.css'
 import { toast } from 'react-hot-toast';
 
 
 function FavoriteBookMarkDay({ key, goodDate, dayName, monthName, text, inconUrl, favBookMarks, syncBookMarks, chanceToGratar }) {
-
-
-
-
 
     const deleteFavoriteDayHandler = () => {
         const id = goodDate
@@ -22,13 +19,12 @@ function FavoriteBookMarkDay({ key, goodDate, dayName, monthName, text, inconUrl
         toast.success(`You successfully deleted ${dayName}!`)
     }
 
-    const verificationBarbequeForColor = (chanceToGratar) => {
+    const verificationBarbequeForColor = useMemo(() => {
         if (chanceToGratar <= 50) {
             console.log('dadadada');
             return false
         } else return true
-    }
-
+    }, [chanceToGratar])
 
     return (
         <>
@@ -39,7 +35,7 @@ function FavoriteBookMarkDay({ key, goodDate, dayName, monthName, text, inconUrl
                         <p>{dayName} {monthName} {goodDate}</p>
                     </div>
                     <div className="favDayElements">
-                        <p>Chance to barbecue:</p>
+                        <p className={!verificationBarbequeForColor ? 'noGratar' : 'gratar'}>Chance to barbecue:</p>
                         <p>{chanceToGratar}%</p>
                     </div>
                     <button className='delBtn' type="button" onClick={deleteFavoriteDayHandler}>x</button>

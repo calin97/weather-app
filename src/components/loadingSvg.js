@@ -1,7 +1,5 @@
 import '../UI/loadingSvg.css'
 
-
-
 function LoadingSvg() {
     return <svg id="dots" width="132px" height="58px" viewBox="0 0 132 58" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <title>dots</title>
@@ -18,5 +16,4 @@ function LoadingSvg() {
 
 
 }
-
 export default LoadingSvg
