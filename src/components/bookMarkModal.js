@@ -21,7 +21,6 @@ function BookMarkModal({ setIsOpen }) {
         syncBookMarks()
     }, [syncBookMarks])
 
-    console.log(favBookMarks);
 
     return <>
         <div className={classes.darkBG} onClick={() => setIsOpen(false)} />

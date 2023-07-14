@@ -21,7 +21,6 @@ function FavoriteBookMarkDay({ key, goodDate, dayName, monthName, text, inconUrl
 
     const verificationBarbequeForColor = useMemo(() => {
         if (chanceToGratar <= 50) {
-            console.log('dadadada');
             return false
         } else return true
     }, [chanceToGratar])

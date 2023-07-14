@@ -12,7 +12,6 @@ function DaysList({ searchText }) {
 
     useEffect(() => {
         const fetchData = async () => {
-            console.log();
             try {
                 const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${searchText ? `${searchText}` : `Cluj-Napoca`}&days=7&aqi=no&alerts=no`);
                 const resData = await response.json();
@@ -28,7 +27,6 @@ function DaysList({ searchText }) {
         fetchData();
     }, [searchText]);
 
-    console.log(data);
 
     const computeChanceToGratar = (chanceToRain) => {
         const chanceToGratarDinParteaPloii = 100 - chanceToRain
